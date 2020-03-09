@@ -1,19 +1,22 @@
 import React from 'react';
-import './Card.css';
+import camioncito from '../img/truck.svg';
 
 const Card = props => {
-  console.log(props)
   return (
     <div className="card">
-      <div className="img">
-        <img src={props.info.thumbnail}></img>
-        <h5>{props.info.title}</h5>
-        <h6>{props.info.price}</h6>
-
-        <h6>Condicion: {props.info.condition}</h6>
-        <h6>Envio gratuito: {props.info.free_shipping.toString()}</h6>
+      <div className="top">
+        <img alt={props.info.title} src={props.info.thumbnail} />
       </div>
-
+      <div className="bottom">
+        <div className="details">
+          <h5>{props.info.title}</h5>
+          <p>$ {props.info.price}</p>
+        </div>
+        <div className="shipping">
+        {props.info.free_shipping && 
+          <img alt="envio gratis" src={camioncito}/>}
+        </div>
+      </div>
     </div>
   );
 };

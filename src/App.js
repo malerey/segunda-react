@@ -409,7 +409,7 @@ const App = () => {
   ]
 
   return (
-    <div>
+    <div className="wrapper">
       <Card info={products[0]} />
     </div>
   );
